@@ -1,0 +1,263 @@
+"""All site copy for Tidy Day Cleaning Services. Edit here, then run: python _src/build.py"""
+
+SITE = "https://tidydaycleaningservices.com"
+NAME = "Tidy Day Cleaning Services"
+SHORT = "Tidy Day"
+OWNER = "Kirsten Thouvenot"
+EMAIL = "hello@tidydaycleaningservices.com"   # confirm with the client before launch
+PHONE = ""                                    # e.g. "(512) 555-0123"; phone links stay hidden while blank
+CITY = "Austin"
+REGION = "TX"
+TAGLINE = "A tidy home, a lighter day."
+
+AREAS = [
+    "Austin", "Round Rock", "Cedar Park", "Pflugerville", "Georgetown", "Leander",
+    "Lakeway", "Bee Cave", "West Lake Hills", "Buda", "Kyle", "Dripping Springs",
+    "Manor", "Hutto",
+]
+
+SERVICES = [
+    {
+        "slug": "standard-cleaning",
+        "name": "Standard House Cleaning",
+        "nav": "Standard Cleaning",
+        "icon": "droplet",
+        "short": "Routine cleaning that keeps kitchens, bathrooms and living spaces fresh, tidy and ready for real life.",
+        "title": "Standard House Cleaning in Austin, TX",
+        "meta": "Standard house cleaning in Austin, TX. Kitchens, bathrooms, floors and dusting handled with care by Tidy Day Cleaning Services. Request a free quote.",
+        "hero": "standard-hero", "hero_alt": "Cleaner wiping down a granite kitchen counter with a spray bottle and cloth",
+        "lead": "Your home, refreshed from top to bottom on a schedule that fits your week. Our standard clean covers the rooms you use most so you can come home and simply breathe.",
+        "body": [
+            "Life in Austin moves fast. Between work, school runs and everything else, keeping up with the dusting and the bathrooms is usually the first thing to slip. Our standard house cleaning takes that weight off your shoulders with a thorough, consistent clean of every main living space.",
+            "We follow a room by room checklist so nothing gets skipped, and we treat your home with the same care we would want in our own. Expect clean surfaces, fresh bathrooms, a sparkling kitchen and floors that feel good under bare feet.",
+        ],
+        "includes": [
+            "Dusting of reachable surfaces, shelves and décor",
+            "Kitchen counters, backsplash and sink cleaned and shined",
+            "Exterior of appliances and microwave inside wiped",
+            "Bathrooms: toilets, tubs, showers, sinks and mirrors",
+            "Vacuuming of carpets and rugs",
+            "Mopping of hard floors",
+            "Beds made and linens changed when left out",
+            "Trash emptied and liners replaced",
+            "Light tidying and straightening throughout",
+            "Light switches, door handles and high touch areas wiped",
+        ],
+        "ideal": ["Busy professionals and families", "Homes that are already in good shape", "Anyone who wants a reliable reset each visit"],
+        "gallery": [("standard-bedroom", "Freshly made bed in a clean, bright bedroom"), ("standard-spray", "Spraying and wiping a kitchen surface with a striped cloth")],
+        "faqs": [
+            ("How long does a standard clean take?", "Most homes take two to four hours depending on size, the number of bathrooms and the current condition. We will give you a time estimate with your quote."),
+            ("Do I need to be home during the clean?", "Not at all. Many clients give us access and come home to a finished clean. We are happy to work around whatever is most comfortable for you."),
+            ("What if my home needs more than a standard clean?", "If it has been a while since your last professional clean, we usually recommend starting with a deep clean, then moving to standard visits to keep things fresh."),
+        ],
+    },
+    {
+        "slug": "deep-cleaning",
+        "name": "Deep Cleaning",
+        "nav": "Deep Cleaning",
+        "icon": "sparkle",
+        "short": "A detailed top to bottom clean for buildup, baseboards, fixtures and all the spots that get overlooked.",
+        "title": "Deep Cleaning Services in Austin, TX",
+        "meta": "Deep cleaning in Austin, TX for baseboards, buildup, grout, fixtures and overlooked spots. Detailed, top to bottom service from Tidy Day Cleaning Services.",
+        "hero": "deep-hero", "hero_alt": "Gloved hand scrubbing a soapy bathroom mirror with a sponge",
+        "lead": "When your home needs more than a quick refresh, our deep clean reaches the corners, edges and buildup that everyday cleaning leaves behind.",
+        "body": [
+            "A deep clean is our most detailed service. We slow down and work through every room with extra attention to the places that collect dust, soap scum and grime over time: baseboards, door frames, cabinet fronts, light fixtures, grout lines and more.",
+            "It is the perfect first visit before recurring service, a seasonal reset for spring or the holidays, or a fresh start before guests arrive. You will notice the difference the moment you walk in.",
+        ],
+        "includes": [
+            "Everything in our standard house cleaning",
+            "Baseboards, door frames and doors hand wiped",
+            "Cabinet and drawer fronts cleaned",
+            "Light fixtures, ceiling fan blades and vents dusted",
+            "Soap scum and hard water buildup treated in showers and tubs",
+            "Grout lines and tile edges scrubbed",
+            "Window sills and blinds dusted",
+            "Behind and under reachable furniture vacuumed",
+            "Switch plates, outlets and handles detailed",
+            "Kitchen backsplash and stovetop degreased",
+        ],
+        "ideal": ["First time clients", "Seasonal or holiday resets", "Homes that have gone a while between cleans"],
+        "gallery": [("deep-floor", "Scrub brush lifting soapy buildup from a tile floor"), ("deep-bathroom", "Spotless modern bathroom with a glass shower and clean vanity")],
+        "faqs": [
+            ("How is a deep clean different from a standard clean?", "A deep clean covers everything in a standard visit plus detailed work on baseboards, cabinet fronts, fixtures, grout, buildup and other areas that are not part of routine service."),
+            ("How often should I book a deep clean?", "Many Austin homeowners book one every three to six months, or once before starting recurring cleaning. Your recurring visits then keep everything maintained."),
+            ("Can I add inside the oven or fridge?", "Yes. Inside the oven, inside the refrigerator and interior windows are popular add ons. Just mention them when you request your quote."),
+        ],
+    },
+    {
+        "slug": "recurring-cleaning",
+        "name": "Recurring Cleaning",
+        "nav": "Recurring Cleaning",
+        "icon": "repeat",
+        "short": "Weekly, biweekly or monthly visits so your home stays consistently clean without the scheduling hassle.",
+        "title": "Weekly, Biweekly & Monthly House Cleaning in Austin, TX",
+        "meta": "Recurring house cleaning in Austin, TX. Weekly, biweekly or monthly visits from a consistent, detail focused team at Tidy Day Cleaning Services.",
+        "hero": "recurring-hero", "hero_alt": "Two cleaners dusting shelves and mopping the floor of a bright living room",
+        "lead": "Set it once and enjoy a clean home all year. Recurring visits keep your space consistently fresh, and you never have to think about booking again.",
+        "body": [
+            "Recurring cleaning is the easiest way to keep your home feeling calm and cared for. Choose weekly, biweekly or monthly visits and we will show up on your schedule with the same checklist and the same attention to detail every time.",
+            "Because we visit regularly, we get to know your home and how you like things done. Little preferences, like how you want the throw pillows arranged or which rooms to focus on, become part of the routine.",
+        ],
+        "includes": [
+            "Flexible weekly, biweekly or monthly scheduling",
+            "Full kitchen and bathroom cleaning each visit",
+            "Dusting, vacuuming and mopping throughout",
+            "Beds made and surfaces tidied",
+            "Rotating detail tasks so every area gets attention over time",
+            "Notes kept on your preferences and priorities",
+            "Easy rescheduling when life gets busy",
+            "Add ons available at any visit",
+        ],
+        "ideal": ["Families with kids and pets", "Busy professionals", "Anyone who wants to stop thinking about cleaning"],
+        "gallery": [("recurring-broom", "Sweeping a hardwood floor with a broom and dustpan"), ("recurring-bedroom", "Calm sage green bedroom with plants and a freshly made bed")],
+        "faqs": [
+            ("Which frequency should I choose?", "Weekly suits busy households with kids or pets, biweekly is our most popular choice, and monthly works well for smaller homes or tidy households that want a regular reset."),
+            ("Do I need a deep clean first?", "If your home has not been professionally cleaned recently, we usually start with a deep clean so your recurring visits can focus on maintaining that standard."),
+            ("Can I skip or move a visit?", "Of course. Just let us know ahead of time and we will find a new time that works for you."),
+        ],
+    },
+    {
+        "slug": "move-in-move-out-cleaning",
+        "name": "Move-In & Move-Out Cleaning",
+        "nav": "Move-In & Move-Out",
+        "icon": "box",
+        "short": "A thorough clean for empty homes so you can hand over the keys or settle into your new place with confidence.",
+        "title": "Move-In & Move-Out Cleaning in Austin, TX",
+        "meta": "Move-in and move-out cleaning in Austin, TX. Empty home cleaning for renters, homeowners, landlords and property managers by Tidy Day Cleaning Services.",
+        "hero": "move-hero", "hero_alt": "Empty, freshly cleaned living room with wood floors ready for move in",
+        "lead": "Moving is stressful enough. Let us handle the cleaning so you can focus on boxes, keys and settling in.",
+        "body": [
+            "Whether you are handing back keys on a rental, preparing a home for new buyers or moving into a fresh space, an empty home cleaning lets us reach every surface, cabinet and corner without furniture in the way.",
+            "We clean inside cabinets and drawers, inside appliances, along baseboards and in all the spots that tend to get flagged on walk throughs. Your new home is ready to unpack, or your old one is ready for its next chapter.",
+        ],
+        "includes": [
+            "Inside all cabinets, drawers and closets",
+            "Inside the oven, refrigerator and microwave",
+            "Baseboards, door frames and doors wiped",
+            "Bathrooms fully scrubbed and sanitized",
+            "Window sills and tracks cleaned",
+            "Light fixtures, switches and outlets wiped",
+            "Floors vacuumed and mopped edge to edge",
+            "Kitchen backsplash, counters and sink detailed",
+            "Garage sweep available on request",
+        ],
+        "ideal": ["Renters hoping for their deposit back", "Homeowners listing or buying", "Landlords and property managers"],
+        "gallery": [("move-boxes", "Smiling woman unpacking moving boxes with her small white dog"), ("move-kitchen", "Empty, clean white kitchen ready for new owners")],
+        "faqs": [
+            ("Should the home be empty?", "Yes, ideally. An empty home lets us clean inside every cabinet and closet and along every wall. If a few items remain, just let us know."),
+            ("Do you work with landlords and property managers?", "Absolutely. We are happy to coordinate access and timing for turnovers between tenants."),
+            ("How far ahead should I book?", "As soon as you know your moving date. End of month dates fill quickly in Austin, so earlier is better."),
+        ],
+    },
+    {
+        "slug": "airbnb-vacation-rental-cleaning",
+        "name": "Airbnb & Vacation Rental Cleaning",
+        "nav": "Airbnb & Vacation Rentals",
+        "icon": "bed",
+        "short": "Reliable turnover cleaning between guests, with fresh linens, restocked basics and a five star first impression.",
+        "title": "Airbnb & Vacation Rental Cleaning in Austin, TX",
+        "meta": "Airbnb and short term rental turnover cleaning in Austin, TX. Fresh linens, staged rooms and guest ready spaces from Tidy Day Cleaning Services.",
+        "hero": "airbnb-hero", "hero_alt": "Housekeeper fluffing pillows while making a guest bed",
+        "lead": "Guest ready, every single time. We turn your rental around quickly and carefully so each stay starts with a spotless, welcoming space.",
+        "body": [
+            "Austin welcomes visitors all year for festivals, games and weekend getaways, and your reviews depend on a clean, consistent space. Our turnover cleaning resets the entire property between guests so it looks and feels just like your listing photos.",
+            "We change linens, refresh bathrooms, clean the kitchen, check for left behind items and stage each room with care. If something looks off, like a damaged item or low supplies, we let you know right away.",
+        ],
+        "includes": [
+            "Full clean of kitchen, bathrooms and living areas",
+            "Beds stripped and made with fresh linens",
+            "Towels replaced and folded",
+            "Dishes washed and put away",
+            "Trash removed and bins relined",
+            "Restocking of basics you provide",
+            "Rooms staged to match your listing",
+            "Notes on damage, missing items or low supplies",
+        ],
+        "ideal": ["Airbnb and VRBO hosts", "Short term rental managers", "Second homes and guest suites"],
+        "gallery": [("airbnb-bedroom", "Neatly made hotel style bed with crisp white linens"), ("airbnb-living", "Bright, guest ready apartment living and dining area")],
+        "faqs": [
+            ("Can you work around check in and check out times?", "Yes. We plan turnovers around your booking calendar so the space is ready before the next guest arrives."),
+            ("Do you do laundry?", "We can change and launder linens on site when the property has a washer and dryer, or swap in your clean backup sets."),
+            ("Will you tell me if something is damaged?", "Always. We send a quick note with photos if we spot damage, missing items or anything that needs your attention."),
+        ],
+    },
+    {
+        "slug": "office-commercial-cleaning",
+        "name": "Office & Commercial Cleaning",
+        "nav": "Office & Commercial",
+        "icon": "building",
+        "short": "Dependable cleaning for offices, studios and small businesses so your space always feels professional.",
+        "title": "Office & Commercial Cleaning in Austin, TX",
+        "meta": "Office and small commercial cleaning in Austin, TX. Reliable, flexible scheduling for offices, studios and storefronts from Tidy Day Cleaning Services.",
+        "hero": "commercial-hero", "hero_alt": "Cleaners vacuuming the floor and wiping glass walls in a modern office",
+        "lead": "A clean workspace makes a great first impression on clients and a better day for your team. We keep your space looking its best.",
+        "body": [
+            "From boutique studios and salons to small offices and storefronts, we tailor a cleaning plan to the way your space is actually used. We focus on high traffic areas, shared kitchens, restrooms and the touch points that matter most.",
+            "We can clean before opening, after closing or on weekends, so your business keeps running without interruption.",
+        ],
+        "includes": [
+            "Desks, counters and workstations wiped",
+            "Restrooms cleaned, sanitized and restocked",
+            "Breakroom and kitchenette cleaning",
+            "Trash and recycling removed",
+            "Vacuuming and mopping of all floors",
+            "Glass doors and entry areas cleaned",
+            "Door handles, switches and high touch points disinfected",
+            "Flexible daily, weekly or custom schedules",
+        ],
+        "ideal": ["Small offices", "Studios, salons and boutiques", "Retail storefronts and showrooms"],
+        "gallery": [("commercial-office", "Clean, open plan office with polished floors"), ("commercial-cart", "Cleaner with a supply cart in a bright commercial hallway")],
+        "faqs": [
+            ("Can you clean outside business hours?", "Yes. We regularly clean early mornings, evenings and weekends so we never get in the way of your team or customers."),
+            ("Do you offer custom cleaning plans?", "Every commercial plan is built around your space, foot traffic and priorities. We walk through the space with you before your first clean."),
+            ("What size spaces do you clean?", "We focus on small to mid sized offices and storefronts where a personal, detail focused team makes a real difference."),
+        ],
+    },
+    {
+        "slug": "post-construction-cleaning",
+        "name": "Post-Construction Cleaning",
+        "nav": "Post-Construction",
+        "icon": "hammer",
+        "short": "Detailed removal of construction dust and debris so new builds and remodels are truly move-in ready.",
+        "title": "Post-Construction Cleaning in Austin, TX",
+        "meta": "Post-construction and renovation cleaning in Austin, TX. Fine dust, debris and residue removal for new builds and remodels by Tidy Day Cleaning Services.",
+        "hero": "construction-hero", "hero_alt": "Vacuuming construction dust and debris from a newly renovated room",
+        "lead": "Your remodel is finished, but the dust is everywhere. We turn a job site into a home you can actually enjoy.",
+        "body": [
+            "Renovations and new builds leave behind a fine layer of drywall dust that settles on every ledge, vent and cabinet. Our post-construction clean removes that dust and residue carefully, using the right tools so new finishes stay protected.",
+            "We work with homeowners, builders and remodelers across Central Texas to get spaces ready for final walk throughs, photos and move in day.",
+        ],
+        "includes": [
+            "Fine dust removal from every surface, ledge and trim",
+            "Inside cabinets, drawers and closets wiped out",
+            "Vents, fans and light fixtures dusted",
+            "Sticker, tape and light residue removal",
+            "Windows, sills and tracks cleaned",
+            "Bathrooms and kitchen fixtures polished",
+            "Floors vacuumed and mopped, multiple passes as needed",
+            "Final detail clean before walk through",
+        ],
+        "ideal": ["Kitchen and bath remodels", "New construction homes", "Builders and remodelers"],
+        "gallery": [("construction-floor", "Floor buffing machine polishing a newly built space"), ("construction-home", "Modern newly built home ready for move in")],
+        "faqs": [
+            ("When should I schedule the cleaning?", "Once the trades have finished and major debris has been hauled away. We handle the fine dust and detail work that comes after."),
+            ("Do you remove large debris?", "We focus on cleaning rather than hauling. Large debris, leftover materials and dumpster loads should be removed by your contractor first."),
+            ("Can you do more than one pass?", "Yes. For larger projects we often recommend a rough clean followed by a final detail clean just before move in or photos."),
+        ],
+    },
+]
+
+HOME_FAQS = [
+    ("What areas do you serve?", "We serve Austin, TX and the surrounding communities, including Round Rock, Cedar Park, Pflugerville, Georgetown, Leander, Lakeway, Bee Cave, Buda, Kyle and nearby areas. If you are close by, just ask."),
+    ("How do I get a price?", "Send us a quick message through the quote form with your home size, the service you are interested in and your preferred timing. We will follow up with a personalized quote."),
+    ("Do you bring your own supplies?", "Yes. We arrive with our own supplies and equipment. If you prefer specific or fragrance free products, just let us know and we are happy to use them."),
+    ("Do I need to be home?", "Not at all. Many clients provide access and come home to a finished clean. Whatever feels most comfortable to you works for us."),
+    ("What if something was missed?", "Your happiness matters to us. If anything is not quite right, reach out and we will make it right."),
+]
+
+INCLUDED = {
+    "Kitchen": ["Counters, backsplash and sink", "Appliance exteriors and microwave", "Cabinet fronts spot cleaned", "Floors vacuumed and mopped"],
+    "Bathrooms": ["Toilets, tubs and showers scrubbed", "Sinks, faucets and mirrors shined", "Counters and fixtures wiped", "Floors cleaned edge to edge"],
+    "Bedrooms & Living": ["Dusting of surfaces and décor", "Beds made, linens changed if left out", "Carpets and rugs vacuumed", "Light tidying throughout"],
+}
