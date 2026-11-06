@@ -14,7 +14,7 @@ from content import *  # noqa
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TODAY = datetime.date.today().isoformat()
-VER = "3"
+VER = "4"
 
 # ---------------------------------------------------------------- icons
 ICONS = {
@@ -92,7 +92,7 @@ def head(p, title, desc, path, extra_ld=None, img="assets/og-image.jpg", preload
 <link rel="manifest" href="{p}site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..650;1,9..144,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 {pre}<link rel="stylesheet" href="{p}css/styles.css?v={VER}">
 <script type="application/ld+json">{json.dumps(ld if len(ld) > 1 else ld[0], ensure_ascii=False)}</script>
 </head>
@@ -214,7 +214,7 @@ def service_cards(p, extra=True):
     for s in SERVICES:
         cards += f"""<a class="svc-card" href="{p}services/{s['slug']}/">
   <div class="svc-img">{img(p, s['hero'], s['hero_alt'], 600, 420)}</div>
-  <div class="svc-body"><span class="svc-ic">{icon(s['icon'])}</span><h3>{e(s['name'])}</h3><p>{e(s['short'])}</p><span class="more">Learn more {icon("arrow")}</span></div>
+  <div class="svc-body"><span class="svc-ic">{icon(s['icon'])}</span><h3>{e(s['name']).replace('-', '&#8209;')}</h3><p>{e(s['short'])}</p><span class="more">Learn more {icon("arrow")}</span></div>
 </a>"""
     if extra:
         cards += f"""<div class="svc-card svc-help"><div class="svc-body">
@@ -302,7 +302,7 @@ def home():
       <ul class="hero-points"><li>{icon("check")}Owner led and detail focused</li><li>{icon("check")}Flexible scheduling</li><li>{icon("check")}Supplies included</li></ul>
     </div>
     <div class="hero-media">
-      <div class="arch">{img(p, "home-hero", "Smiling cleaner vacuuming a bright, tidy living room", 1000, 1500, lazy=False)}</div>
+      <div class="arch">{img(p, "home-hero", "Mint green gloved hand polishing a blush pink glass vase", 1100, 1467, lazy=False)}</div>
       <div class="float-card"><span class="fc-ic">{icon("sparkle")}</span><div><strong>Every corner, every visit</strong><span>Checklist based cleaning</span></div></div>
     </div>
   </div>

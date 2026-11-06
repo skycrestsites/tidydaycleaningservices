@@ -24,7 +24,7 @@
   --r-sm:12px;
   --shadow:0 1px 2px rgba(44,54,80,.05),0 8px 24px -8px rgba(44,54,80,.12);
   --shadow-lg:0 2px 6px rgba(44,54,80,.05),0 24px 48px -16px rgba(44,54,80,.22);
-  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --serif:"Caprasimo","Cooper Black",Georgia,serif;
   --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --wrap:1200px;
   --pad:clamp(20px,5vw,40px);
@@ -35,11 +35,11 @@ body{margin:0;font-family:var(--sans);font-size:16.5px;line-height:1.65;color:va
 img{max-width:100%;height:auto;display:block}
 a{color:var(--blue-d);text-decoration:none}
 a:hover{color:var(--rose-d)}
-h1,h2,h3{text-wrap:balance;font-family:var(--serif);color:var(--ink);font-weight:500;line-height:1.12;margin:0 0 .5em;letter-spacing:-.015em;font-variation-settings:"SOFT" 100,"WONK" 0}
+h1,h2,h3{text-wrap:balance;font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1.14;margin:0 0 .5em;letter-spacing:-.005em}
 h1{font-size:clamp(2.35rem,6vw,4rem)}
 h2{font-size:clamp(1.85rem,4vw,2.75rem)}
-h3{font-size:1.25rem;font-weight:550;letter-spacing:-.005em}
-h1 em,h2 em{font-style:italic;color:var(--rose-d);font-weight:450}
+h3{font-size:1.2rem;font-weight:400;letter-spacing:0}
+h1 em,h2 em{font-style:normal;color:var(--rose-d)}
 p{margin:0 0 1.1em}
 ul,ol{margin:0;padding:0;list-style:none}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
@@ -123,7 +123,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .hero-points .ic{width:18px;height:18px;padding:3px;border-radius:50%;background:var(--mint);color:#fff;stroke-width:3}
 .hero-media{position:relative;justify-self:end;width:100%;max-width:470px}
 .arch{position:relative;border-radius:240px 240px var(--r) var(--r);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-lg);background:var(--rose-w)}
-.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
 .hero-media::before{content:"";position:absolute;inset:22px -22px -22px 22px;border-radius:240px 240px var(--r) var(--r);border:1.5px solid var(--rose);z-index:-1}
 .float-card{position:absolute;left:-36px;bottom:40px;display:flex;align-items:center;gap:12px;background:#fff;padding:14px 18px 14px 14px;border-radius:16px;box-shadow:var(--shadow-lg)}
 .float-card strong{display:block;color:var(--ink);font-size:.95rem;line-height:1.3}
@@ -190,7 +190,7 @@ a.svc-card:hover .more .ic{transform:translateX(4px)}
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
 .steps li{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 30px 30px}
-.step-n{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--ink);background:var(--rose-w);margin-bottom:20px}
+.step-n{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--ink);background:var(--rose-w);margin-bottom:20px}
 .steps li:nth-child(2) .step-n{background:var(--sky-w)}
 .steps li:nth-child(3) .step-n{background:var(--mint-w)}
 .steps p{margin:0;font-size:.96rem}
@@ -224,7 +224,7 @@ a.svc-card:hover .more .ic{transform:translateX(4px)}
 .faq-wrap .btn{margin-top:8px}
 .faqs{display:grid;gap:12px}
 .faq{background:#fff;border-radius:var(--r-sm);border:1px solid #DCEBE1}
-.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;font-family:var(--serif);font-weight:550;font-size:1.08rem;color:var(--ink)}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;font-family:var(--sans);font-weight:700;font-size:1.02rem;color:var(--ink)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary .chev{width:22px;height:22px;padding:3px;border-radius:50%;background:var(--mint-w);color:var(--mint-d)}
 .faq[open] summary .chev{transform:rotate(180deg);background:var(--rose-w);color:var(--rose-d)}
@@ -376,6 +376,7 @@ a.svc-card:hover .more .ic{transform:translateX(4px)}
   .steps,.checklist,.inc-cols,.other-svc{grid-template-columns:1fr}
   .ticks.two{grid-template-columns:1fr}
   .f-row{grid-template-columns:1fr}
+  .hero-deco{display:none}
   .float-card{left:-8px;bottom:22px;padding:10px 14px 10px 10px}
   .hero-media::before{inset:14px -12px -14px 12px}
   .hero-points{gap:10px 16px}
