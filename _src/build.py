@@ -12,9 +12,10 @@ from html import escape
 sys.path.insert(0, os.path.dirname(__file__))
 from content import *  # noqa
 
+TEL = "+1" + "".join(ch for ch in PHONE if ch.isdigit()) if PHONE else ""
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TODAY = datetime.date.today().isoformat()
-VER = "4"
+VER = "6"
 
 # ---------------------------------------------------------------- icons
 ICONS = {
@@ -118,7 +119,6 @@ def business_ld():
         "image": SITE + "/assets/og-tidyday-logo.jpg",
         **({"email": EMAIL} if EMAIL else {}),
         **({"telephone": PHONE} if PHONE else {}),
-        "founder": {"@type": "Person", "name": OWNER},
         "address": {"@type": "PostalAddress", "addressLocality": CITY, "addressRegion": REGION, "addressCountry": "US"},
         "areaServed": [{"@type": "City", "name": f"{a}, TX"} for a in AREAS],
         "priceRange": "$$",
@@ -142,9 +142,11 @@ def faq_ld(faqs):
 def header(p, active=""):
     def cls(k):
         return ' aria-current="page"' if active == k else ""
+    tb_contact = (f'<a class="tb-link" href="tel:{TEL}">{icon("phone")} {e(PHONE)}</a>' if PHONE else "") + (f'<a class="tb-link tb-mail" href="mailto:{EMAIL}">{icon("mail")} {e(EMAIL)}</a>' if EMAIL else "")
+    mcall = f'<a class="btn btn-ghost" href="tel:{TEL}">{icon("phone")} Call {e(PHONE)}</a>' if PHONE else ""
     drop = "".join(f'<a href="{p}services/{s["slug"]}/">{icon(s["icon"])}<span>{e(s["nav"])}</span></a>' for s in SERVICES)
     mob = "".join(f'<a href="{p}services/{s["slug"]}/">{e(s["nav"])}</a>' for s in SERVICES)
-    return f"""<div class="topbar"><div class="wrap topbar-in"><span>{icon("pin")} Serving {CITY}, {REGION} &amp; surrounding areas</span><a href="{p}contact/">Request a free quote {icon("arrow")}</a></div></div>
+    return f"""<div class="topbar"><div class="wrap topbar-in"><div class="tb-left">{tb_contact}<span class="tb-area">{icon("pin")} Serving {CITY}, {REGION} &amp; surrounding areas</span></div><a href="{p}contact/">Request a free quote {icon("arrow")}</a></div></div>
 <header class="site-header" id="top">
   <div class="wrap nav">
     <a class="brand" href="{p}" aria-label="{e(NAME)} home"><img src="{p}assets/logo-sm.webp" alt="{e(NAME)}" width="440" height="225"></a>
@@ -169,6 +171,7 @@ def header(p, active=""):
     <a href="{p}#areas">Service Areas</a>
     <a href="{p}contact/">Contact</a>
     <a class="btn btn-rose" href="{p}contact/">Get a Free Quote</a>
+    {mcall}
   </div>
 </header>
 <main id="main">
@@ -179,7 +182,7 @@ def footer(p):
     svc = "".join(f'<li><a href="{p}services/{s["slug"]}/">{e(s["nav"])}</a></li>' for s in SERVICES)
     contact = ""
     if PHONE:
-        contact += f'<li><a href="tel:{PHONE}">{icon("phone")} {e(PHONE)}</a></li>'
+        contact += f'<li><a href="tel:{TEL}">{icon("phone")} {e(PHONE)}</a></li>'
     if EMAIL:
         contact += f'<li><a href="mailto:{EMAIL}">{icon("mail")} {e(EMAIL)}</a></li>'
     contact += f'<li><span>{icon("pin")} {CITY}, {REGION} &amp; surrounding areas</span></li>'
@@ -336,12 +339,12 @@ def home():
 <section class="section tint-blush about-split" id="about">
   <div class="wrap split">
     <div class="split-media">
-      <div class="frame frame-mint">{img(p, "about-kirsten", "Mint green cleaning gloves and a spray bottle resting beside a potted plant", 800, 1067)}</div>
+      <div class="frame frame-mint">{img(p, "about-gloves", "Mint green cleaning gloves and a spray bottle resting beside a potted plant", 800, 1067)}</div>
     </div>
     <div class="split-copy">
       {eyebrow("Meet Tidy Day")}
       <h2>Cleaning with a <em>personal</em> touch</h2>
-      <p>Tidy Day Cleaning Services was founded by {OWNER} with a simple idea: a clean home should feel calm, cared for and completely yours. We are a local Austin company that believes the little details are what make a clean feel truly finished.</p>
+      <p>Tidy Day Cleaning Services was founded with a simple idea: a clean home should feel calm, cared for and completely yours. We are a local Austin company that believes the little details are what make a clean feel truly finished.</p>
       <p>Every visit follows a thoughtful checklist, and every client gets the kind of friendly, respectful service we would want in our own homes. Whether you need a one time reset or a regular helping hand, we are here to make your days a little lighter.</p>
       <ul class="ticks two">
         <li>{icon("check")}Owner led and locally run</li><li>{icon("check")}Clear, friendly communication</li>
@@ -524,7 +527,7 @@ def service(s):
 def about():
     p = "../"
     html = head(p, f"About Us | {NAME} in Austin, TX",
-                f"Meet Tidy Day Cleaning Services, a locally owned Austin, TX cleaning company founded by {OWNER}. Detail focused, friendly and dependable.",
+                "Meet Tidy Day Cleaning Services, a locally owned Austin, TX cleaning company. Detail focused, friendly and dependable.",
                 "about/", [crumbs_ld([("Home", ""), ("About", "about/")])])
     html += header(p, "about")
     html += f"""<section class="page-hero">
@@ -537,10 +540,10 @@ def about():
 </section>
 <section class="section pt-0">
   <div class="wrap split">
-    <div class="split-media"><div class="frame frame-sky">{img(p, "about-kirsten", "Mint green cleaning gloves and a spray bottle resting beside a potted plant", 800, 1067)}</div></div>
+    <div class="split-media"><div class="frame frame-sky">{img(p, "about-gloves", "Mint green cleaning gloves and a spray bottle resting beside a potted plant", 800, 1067)}</div></div>
     <div class="split-copy">
       {eyebrow("Our story")}
-      <h2>Founded by {e(OWNER)}</h2>
+      <h2>Locally owned, <em>personally</em> run</h2>
       <p>Tidy Day Cleaning Services started with a simple goal: give busy Austin families and professionals a cleaning service they can genuinely count on. Not a rushed wipe down, but a careful, thorough clean that leaves your home feeling light and refreshed.</p>
       <p>We know that inviting someone into your home is personal. That is why we focus on clear communication, showing up when we say we will and treating every room, pet and personal item with respect.</p>
       <p>Today we care for homes, rentals and small businesses across Austin and the surrounding communities, and we would love to care for yours too.</p>
@@ -573,7 +576,7 @@ def contact():
     html += header(p, "contact")
     rows = ""
     if PHONE:
-        rows += f'<li>{icon("phone")}<div><strong>Call or text</strong><a href="tel:{PHONE}">{e(PHONE)}</a></div></li>'
+        rows += f'<li>{icon("phone")}<div><strong>Call or text</strong><a href="tel:{TEL}">{e(PHONE)}</a></div></li>'
     if EMAIL:
         rows += f'<li>{icon("mail")}<div><strong>Email</strong><a href="mailto:{EMAIL}">{e(EMAIL)}</a></div></li>'
     rows += f'<li>{icon("pin")}<div><strong>Service area</strong><span>{CITY}, {REGION} &amp; surrounding areas</span></div></li>'

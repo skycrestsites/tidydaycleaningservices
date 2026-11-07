@@ -3,9 +3,8 @@
 SITE = "https://www.tidydaycleaning.com"
 NAME = "Tidy Day Cleaning Services"
 SHORT = "Tidy Day"
-OWNER = "Kirsten Thouvenot"
-EMAIL = "hello@tidydaycleaning.com"   # confirm with the client before launch
-PHONE = ""                                    # e.g. "(512) 555-0123"; phone links stay hidden while blank
+EMAIL = "contact@tidydaycleaning.com"
+PHONE = "(737) 241-4285"   # phone links stay hidden while blank
 CITY = "Austin"
 REGION = "TX"
 TAGLINE = "A tidy home, a lighter day."

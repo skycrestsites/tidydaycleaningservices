@@ -74,9 +74,12 @@ ul,ol{margin:0;padding:0;list-style:none}
 /* topbar + header */
 .topbar{background:var(--ink);color:#E9ECF4;font-size:.82rem}
 .topbar-in{display:flex;justify-content:space-between;align-items:center;min-height:38px;gap:16px}
-.topbar span,.topbar a{display:inline-flex;align-items:center;gap:8px}
+.topbar span,.topbar a{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
 .topbar .ic{width:15px;height:15px;color:var(--sun)}
 .topbar a{color:#fff;font-weight:600}
+.tb-left{display:flex;align-items:center;gap:22px}
+.topbar .tb-link{font-weight:500;color:#E9ECF4}
+.topbar .tb-link:hover{color:var(--sun)}
 .topbar a:hover{color:var(--sun)}
 .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
 .site-header.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px rgba(44,54,80,.35)}
@@ -107,6 +110,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .mnav-sub{display:grid;border-bottom:1px solid var(--line);padding-bottom:8px}
 .mnav-sub a{padding:10px 4px 10px 14px;color:var(--ink-2);font-weight:500;border-left:2px solid var(--rose-w)}
 .mnav .btn{display:flex;margin-top:20px;border-bottom:0;color:#fff}
+.mnav .btn-ghost{margin-top:10px;color:var(--ink)}
 
 /* hero */
 .hero{position:relative;background:var(--blush);overflow:hidden;padding:clamp(48px,8vw,96px) 0 clamp(56px,8vw,104px)}
@@ -339,6 +343,7 @@ a.svc-card:hover .more .ic{transform:translateX(4px)}
 
 /* responsive */
 @media (max-width:1180px){
+  .topbar .tb-area{display:none}
   .menu>a,.drop-trigger{padding:10px 10px;font-size:.92rem}
   .svc-grid{grid-template-columns:repeat(3,1fr)}
   .values{grid-template-columns:repeat(2,1fr)}
@@ -365,7 +370,8 @@ a.svc-card:hover .more .ic{transform:translateX(4px)}
 @media (max-width:760px){
   body{font-size:16px}
   .topbar-in{justify-content:center}
-  .topbar a{display:none}
+  .topbar .topbar-in>a,.topbar .tb-mail,.topbar .tb-area{display:none}
+  .topbar .tb-link .ic{color:var(--sun)}
   .svc-grid{grid-template-columns:1fr 1fr;gap:14px}
   .svc-body{padding:26px 16px 18px}
   .svc-body p{display:none}
