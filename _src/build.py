@@ -57,7 +57,7 @@ def e(s):
 
 
 # ---------------------------------------------------------------- shell
-def head(p, title, desc, path, extra_ld=None, img="assets/og-image.jpg", preload=None):
+def head(p, title, desc, path, extra_ld=None, img="assets/og-tidyday-logo.jpg", preload=None):
     url = SITE + "/" + path
     ld = [business_ld()] + (extra_ld or [])
     pre = f'<link rel="preload" as="image" href="{p}assets/img/{preload}.webp" fetchpriority="high">\n' if preload else ""
@@ -80,6 +80,11 @@ def head(p, title, desc, path, extra_ld=None, img="assets/og-image.jpg", preload
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/{img}">
+<meta property="og:image:secure_url" content="{SITE}/{img}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{e(NAME)} logo">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{e(title)}">
@@ -110,7 +115,7 @@ def business_ld():
         "description": "Home and small business cleaning in Austin, TX and surrounding areas: standard, deep, recurring, move-in and move-out, Airbnb, office and post-construction cleaning.",
         "url": SITE + "/",
         "logo": SITE + "/assets/logo.png",
-        "image": SITE + "/assets/og-image.jpg",
+        "image": SITE + "/assets/og-tidyday-logo.jpg",
         **({"email": EMAIL} if EMAIL else {}),
         **({"telephone": PHONE} if PHONE else {}),
         "founder": {"@type": "Person", "name": OWNER},
@@ -399,7 +404,7 @@ def services_index():
     p = "../"
     html = head(p, f"Cleaning Services in Austin, TX | {NAME}",
                 "Explore house cleaning services in Austin, TX from Tidy Day: standard, deep, recurring, move-in and move-out, Airbnb, office and post-construction cleaning.",
-                "services/", [crumbs_ld([("Home", ""), ("Services", "services/")])], img="assets/og-image.jpg")
+                "services/", [crumbs_ld([("Home", ""), ("Services", "services/")])], img="assets/og-tidyday-logo.jpg")
     html += header(p, "services")
     html += f"""<section class="page-hero">
   <div class="wrap page-hero-in">

@@ -19,7 +19,7 @@ All copy lives in `_src/content.py` (services, FAQs, areas, contact details). Te
 Styles: `css/styles.css`. Behavior: `js/main.js`. Images: `assets/img/`.
 
 ## Before going live
-1. Domain: canonicals, Open Graph, JSON-LD, `sitemap.xml` and `robots.txt` use `https://tidydaycleaningservices.com`. Change `SITE` in `_src/content.py` if different and rebuild.
+1. Domain: canonicals, Open Graph, JSON-LD, `sitemap.xml` and `robots.txt` use `https://www.tidydaycleaning.com`. Change `SITE` in `_src/content.py` if different and rebuild.
 2. Contact: confirm `EMAIL` and add `PHONE` in `_src/content.py` (phone links stay hidden while blank).
 3. Quote form currently opens the visitor's email app pre-filled. To collect submissions directly, hook it to Formspree or similar.
 4. Swap stock photos for real job photos when available (keep file names).

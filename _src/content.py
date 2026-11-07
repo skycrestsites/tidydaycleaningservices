@@ -1,10 +1,10 @@
 """All site copy for Tidy Day Cleaning Services. Edit here, then run: python _src/build.py"""
 
-SITE = "https://tidydaycleaningservices.com"
+SITE = "https://www.tidydaycleaning.com"
 NAME = "Tidy Day Cleaning Services"
 SHORT = "Tidy Day"
 OWNER = "Kirsten Thouvenot"
-EMAIL = "hello@tidydaycleaningservices.com"   # confirm with the client before launch
+EMAIL = "hello@tidydaycleaning.com"   # confirm with the client before launch
 PHONE = ""                                    # e.g. "(512) 555-0123"; phone links stay hidden while blank
 CITY = "Austin"
 REGION = "TX"
